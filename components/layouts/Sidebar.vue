@@ -8,7 +8,7 @@ export default {};
 
 <style lang="scss" scoped>
 .sidebar {
-  background-color: #16151e;
+  background-color: $sidebar-rgb;
   width: 350px;
 
   @include md {

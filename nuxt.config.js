@@ -45,6 +45,6 @@ export default {
   build: {},
 
   styleResources: {
-    scss: ['~/assets/scss/variable.scss'],
+    scss: ['~/assets/scss/variable.scss', '~/assets/scss/colors.scss'],
   },
 };

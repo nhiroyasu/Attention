@@ -8,7 +8,7 @@ export default {};
 
 <style lang="scss" scoped>
 .pickup-point {
-  background-color: #272739;
+  background-color: $pickup-point-rgb;
   display: block;
   height: 100vh;
   position: absolute;
