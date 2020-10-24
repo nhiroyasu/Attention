@@ -20,7 +20,8 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-family: 'Muli', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Muli', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  position: relative;
 }
 </style>
