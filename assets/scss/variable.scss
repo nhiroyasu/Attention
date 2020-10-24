@@ -1,0 +1,44 @@
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+
+@mixin xl {
+  @media (min-width: ($xl)) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: ($xl - 1)) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: ($lg - 1)) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: ($md - 1)) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: ($sm - 1)) {
+    @content;
+  }
+}
+
+/* sample
+.box {
+  @include md {
+    background-color: blue;
+  };
+  @include sm {
+    background-color: yellow;
+  };
+} */
