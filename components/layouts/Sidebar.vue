@@ -14,9 +14,5 @@ export default {};
   @include md {
     width: 200px;
   }
-
-  @include phone {
-    width: 100vw;
-  }
 }
 </style>
