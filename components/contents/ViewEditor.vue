@@ -12,18 +12,19 @@ export default {
       type: String,
       default: 'monokai pickup',
     },
-    codeValue: {
-      type: String,
-      default: '',
-    },
   },
   data() {
     return {
       instance: null,
     };
   },
+  computed: {
+    pickupCode() {
+      return this.$store.getters['pickup/getCode'];
+    },
+  },
   watch: {
-    codeValue(newValue, oldValue) {
+    pickupCode(newValue, oldValue) {
       if (this.instance && newValue) {
         this.instance.setValue(newValue);
       }
@@ -36,7 +37,7 @@ export default {
       theme: this.theme,
       readOnly: 'nocursor',
     });
-    instance.setValue(this.codeValue);
+    instance.setValue(this.pickupCode);
     this.instance = instance;
   },
 };

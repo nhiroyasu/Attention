@@ -31,7 +31,7 @@ export default {
     });
     instance.setValue(this.codeValue);
     instance.on('cursorActivity', (doc) => {
-      this.$emit('onSelect', doc.getSelection());
+      this.$store.commit('pickup/updateCode', doc.getSelection());
     });
 
     this.instance = instance;
