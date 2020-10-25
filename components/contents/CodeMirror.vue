@@ -12,6 +12,26 @@ export default {
       type: String,
       default: 'app',
     },
+    codeValue: {
+      type: String,
+      default: `const name = "attention app";\nconsole.log("Hello, " + name);\n`,
+    },
+    readOnly: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      instance: null,
+    };
+  },
+  watch: {
+    codeValue(newValue, oldValue) {
+      if (this.instance && newValue) {
+        this.instance.setValue(newValue);
+      }
+    },
   },
   mounted() {
     const textArea = this.$refs.code_mirror;
@@ -19,8 +39,16 @@ export default {
       mode: 'javascript',
       lineNumbers: true,
       theme: `monokai ${this.theme}`,
+      readOnly: this.readOnly,
     });
-    instance.on('cursorActivity', (doc) => {});
+    instance.setValue(this.codeValue);
+
+    if (this.readOnly === false) {
+      instance.on('cursorActivity', (doc) => {
+        this.$emit('onSelect', doc.getSelection());
+      });
+    }
+    this.instance = instance;
   },
 };
 </script>
