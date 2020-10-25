@@ -40,8 +40,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'codemirror/lib/codemirror.css';
-@import 'codemirror/theme/monokai.css';
 @import '@/assets/scss/theme/app.scss';
 
 .CodeMirror {

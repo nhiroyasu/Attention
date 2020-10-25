@@ -10,7 +10,7 @@ export default {
   props: {
     theme: {
       type: String,
-      default: 'material-ocean pickup',
+      default: 'monokai pickup',
     },
     codeValue: {
       type: String,
@@ -42,18 +42,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-textarea {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-</style>
-
 <style lang="scss">
-@import 'codemirror/lib/codemirror.css';
-@import 'codemirror/theme/material-ocean.css';
 @import '@/assets/scss/theme/pickup.scss';
 
 .CodeMirror {
