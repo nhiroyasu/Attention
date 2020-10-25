@@ -7,17 +7,20 @@ import * as CodeMirror from 'codemirror';
 import 'codemirror/mode/javascript/javascript';
 
 export default {
+  props: {
+    theme: {
+      type: String,
+      default: 'app',
+    },
+  },
   mounted() {
     const textArea = this.$refs.code_mirror;
     const instance = CodeMirror.fromTextArea(textArea, {
       mode: 'javascript',
       lineNumbers: true,
-      theme: 'monokai app',
+      theme: `monokai ${this.theme}`,
     });
-    instance.on('cursorActivity', (instance) => {
-      // eslint-disable-next-line no-console
-      console.log('cursorActivity');
-    });
+    instance.on('cursorActivity', (doc) => {});
   },
 };
 </script>
