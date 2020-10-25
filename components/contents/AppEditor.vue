@@ -10,7 +10,7 @@ export default {
   props: {
     theme: {
       type: String,
-      default: 'app',
+      default: 'monokai app',
     },
     codeValue: {
       type: String,
@@ -38,7 +38,7 @@ export default {
     const instance = CodeMirror.fromTextArea(textArea, {
       mode: 'javascript',
       lineNumbers: true,
-      theme: `monokai ${this.theme}`,
+      theme: this.theme,
       readOnly: this.readOnly,
     });
     instance.setValue(this.codeValue);
@@ -56,7 +56,9 @@ export default {
 <style lang="scss">
 @import 'codemirror/lib/codemirror.css';
 @import 'codemirror/theme/monokai.css';
+@import 'codemirror/theme/material-ocean.css';
 @import '@/assets/scss/theme/app.scss';
+@import '@/assets/scss/theme/pickup.scss';
 
 .CodeMirror {
   height: 100%;

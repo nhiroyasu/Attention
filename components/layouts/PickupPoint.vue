@@ -1,6 +1,6 @@
 <template>
   <div class="pickup-point" :class="{ 'is-selected': isShowing }">
-    <code-mirror :read-only="true" :code-value="pickupValue || ''" />
+    <code-mirror :read-only="true" theme="material-ocean pickup" :code-value="pickupValue || ''" />
   </div>
 </template>
 
