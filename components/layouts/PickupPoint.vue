@@ -1,5 +1,5 @@
 <template>
-  <div class="pickup-point is-selected"></div>
+  <div class="pickup-point"></div>
 </template>
 
 <script>
@@ -16,6 +16,7 @@ export default {};
 
   &.is-selected {
     width: 72%;
+    z-index: 1;
   }
 }
 </style>
