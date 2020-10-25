@@ -22,10 +22,10 @@ export default {
 
 <style lang="scss" scoped>
 .editor {
-  background-color: $editor-rgb;
   flex-grow: 1;
 
   .code-mirror-wrapper {
+    background-color: $editor-rgb;
     height: 100%;
     padding-left: 10px;
   }

@@ -12,7 +12,7 @@ export default {
     const instance = CodeMirror.fromTextArea(textArea, {
       mode: 'javascript',
       lineNumbers: true,
-      theme: 'monokai',
+      theme: 'monokai app',
     });
     instance.on('cursorActivity', (instance) => {
       // eslint-disable-next-line no-console
@@ -25,10 +25,9 @@ export default {
 <style lang="scss">
 @import 'codemirror/lib/codemirror.css';
 @import 'codemirror/theme/monokai.css';
+@import '@/assets/scss/theme/app.scss';
 
 .CodeMirror {
   height: 100%;
-  font-family: 'Fira Mono', monospace;
-  background: $editor-rgb;
 }
 </style>
