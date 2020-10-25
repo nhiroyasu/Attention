@@ -16,7 +16,7 @@ export default {
 
 <style lang="scss" scoped>
 .editor {
-  background-color: #323134;
+  background-color: $editor-rgb;
   display: block;
   flex-grow: 1;
 }
