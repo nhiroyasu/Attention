@@ -1,21 +1,20 @@
 <template>
-  <div class="editor">
+  <div class="code-container">
     <pickup-point :pickup-value="selectedValue" />
     <div class="code-mirror-wrapper">
-      <code-mirror @onSelect="selectedValue = $event" />
+      <app-editor @onSelect="selectedValue = $event" />
     </div>
   </div>
 </template>
 
 <script>
 import PickupPoint from '@/components/layouts/PickupPoint';
-import CodeMirror from '@/components/contents/CodeMirror';
+import AppEditor from '@/components/contents/AppEditor';
 
 export default {
   components: {
     PickupPoint,
-    // eslint-disable-next-line vue/no-unused-components
-    CodeMirror,
+    AppEditor,
   },
   data() {
     return {
@@ -26,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.editor {
+.code-container {
   flex-grow: 1;
   overflow-x: hidden;
 

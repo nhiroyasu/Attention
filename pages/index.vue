@@ -2,19 +2,19 @@
   <div>
     <div class="app-container">
       <sidebar />
-      <editor />
+      <code-container />
     </div>
   </div>
 </template>
 
 <script>
 import Sidebar from '@/components/layouts/Sidebar';
-import Editor from '@/components/layouts/Editor';
+import CodeContainer from '@/components/layouts/CodeContainer';
 
 export default {
   components: {
     Sidebar,
-    Editor,
+    CodeContainer,
   },
 };
 </script>
