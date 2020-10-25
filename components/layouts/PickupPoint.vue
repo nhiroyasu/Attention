@@ -1,6 +1,6 @@
 <template>
   <div class="pickup-point" :class="{ 'is-selected': isShowing }">
-    <view-editor :code-value="showingValue" />
+    <view-editor />
   </div>
 </template>
 
@@ -11,22 +11,9 @@ export default {
   components: {
     ViewEditor,
   },
-  props: {
-    pickupValue: {
-      type: String,
-      default: null,
-    },
-  },
   computed: {
     isShowing() {
-      if (this.pickupValue) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    showingValue() {
-      return this.pickupValue || '';
+      return this.$store.getters['pickup/getShowing'];
     },
   },
 };

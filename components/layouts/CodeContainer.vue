@@ -1,8 +1,8 @@
 <template>
   <div class="code-container">
-    <pickup-point :pickup-value="selectedValue" />
+    <pickup-point />
     <div class="code-mirror-wrapper">
-      <app-editor @onSelect="selectedValue = $event" />
+      <app-editor />
     </div>
   </div>
 </template>
@@ -15,11 +15,6 @@ export default {
   components: {
     PickupPoint,
     AppEditor,
-  },
-  data() {
-    return {
-      selectedValue: null,
-    };
   },
 };
 </script>
