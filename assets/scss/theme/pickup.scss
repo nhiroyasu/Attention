@@ -1,7 +1,12 @@
 .cm-s-pickup {
   &.CodeMirror {
     font-family: 'Fica Mono', monospace;
+    font-size: 2.5rem;
     background: $pickup-point-rgb;
+
+    * {
+      cursor: default;
+    }
   }
 
   & .CodeMirror-gutters {
@@ -9,17 +14,21 @@
   }
 
   & div.CodeMirror-selected {
-    background: $editor-select-rgb;
+    background: rgba($color: #000000, $alpha: 0);
+  }
+
+  & .CodeMirror-line > span > span {
+    cursor: default;
   }
 
   & .CodeMirror-line::selection,
   & .CodeMirror-line > span::selection,
   & .CodeMirror-line > span > span::selection {
-    background: $editor-select-rgba;
+    background: rgba($color: #000000, $alpha: 0);
   }
   & .CodeMirror-line::-moz-selection,
   & .CodeMirror-line > span::-moz-selection,
   & .CodeMirror-line > span > span::-moz-selection {
-    background: $editor-select-rgba;
+    background: rgba($color: #000000, $alpha: 0);
   }
 }

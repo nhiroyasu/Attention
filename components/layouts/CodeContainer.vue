@@ -14,7 +14,6 @@ import AppEditor from '@/components/contents/AppEditor';
 export default {
   components: {
     PickupPoint,
-    // eslint-disable-next-line vue/no-unused-components
     AppEditor,
   },
   data() {

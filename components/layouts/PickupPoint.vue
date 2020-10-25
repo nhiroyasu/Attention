@@ -1,15 +1,15 @@
 <template>
   <div class="pickup-point" :class="{ 'is-selected': isShowing }">
-    <code-mirror :read-only="true" theme="material-ocean pickup" :code-value="pickupValue || ''" />
+    <view-editor :code-value="showingValue" />
   </div>
 </template>
 
 <script>
-import CodeMirror from '@/components/contents/CodeMirror';
+import ViewEditor from '@/components/contents/ViewEditor';
 
 export default {
   components: {
-    CodeMirror,
+    ViewEditor,
   },
   props: {
     pickupValue: {
@@ -24,6 +24,9 @@ export default {
       } else {
         return false;
       }
+    },
+    showingValue() {
+      return this.pickupValue || '';
     },
   },
 };
