@@ -27,7 +27,7 @@ export default {
   .code-mirror-wrapper {
     background-color: $editor-rgb;
     height: 100%;
-    padding-left: 10px;
+    padding: 10px 0px 0px 10px;
   }
 }
 </style>
