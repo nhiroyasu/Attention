@@ -7,17 +7,48 @@ import * as CodeMirror from 'codemirror';
 import 'codemirror/mode/javascript/javascript';
 
 export default {
+  props: {
+    theme: {
+      type: String,
+      default: 'app',
+    },
+    codeValue: {
+      type: String,
+      default: `const name = "attention app";\nconsole.log("Hello, " + name);\n`,
+    },
+    readOnly: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      instance: null,
+    };
+  },
+  watch: {
+    codeValue(newValue, oldValue) {
+      if (this.instance && newValue) {
+        this.instance.setValue(newValue);
+      }
+    },
+  },
   mounted() {
     const textArea = this.$refs.code_mirror;
     const instance = CodeMirror.fromTextArea(textArea, {
       mode: 'javascript',
       lineNumbers: true,
-      theme: 'monokai app',
+      theme: `monokai ${this.theme}`,
+      readOnly: this.readOnly,
     });
-    instance.on('cursorActivity', (instance) => {
-      // eslint-disable-next-line no-console
-      console.log('cursorActivity');
-    });
+    instance.setValue(this.codeValue);
+
+    if (this.readOnly === false) {
+      instance.on('cursorActivity', (doc) => {
+        this.$emit('onSelect', doc.getSelection());
+      });
+    }
+    this.instance = instance;
   },
 };
 </script>

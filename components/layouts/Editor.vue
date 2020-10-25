@@ -1,8 +1,8 @@
 <template>
   <div class="editor">
-    <pickup-point />
+    <pickup-point :pickup-value="selectedValue" />
     <div class="code-mirror-wrapper">
-      <code-mirror />
+      <code-mirror @onSelect="selectedValue = $event" />
     </div>
   </div>
 </template>
@@ -17,12 +17,18 @@ export default {
     // eslint-disable-next-line vue/no-unused-components
     CodeMirror,
   },
+  data() {
+    return {
+      selectedValue: null,
+    };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .editor {
   flex-grow: 1;
+  overflow-x: hidden;
 
   .code-mirror-wrapper {
     background-color: $editor-rgb;
