@@ -10,9 +10,16 @@ import { options } from '@/plugins/mapping/code-type';
 export default {
   data() {
     return {
-      selected: 'js',
+      selected: 'text/javascript',
       options,
     };
+  },
+  watch: {
+    selected(newValue, oldValue) {
+      if (newValue) {
+        this.$store.commit('preference/updateMode', newValue);
+      }
+    },
   },
 };
 </script>

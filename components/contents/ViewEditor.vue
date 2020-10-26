@@ -4,7 +4,6 @@
 
 <script>
 import * as CodeMirror from 'codemirror';
-import 'codemirror/mode/javascript/javascript';
 
 export default {
   props: {
@@ -22,6 +21,9 @@ export default {
     pickupCode() {
       return this.$store.getters['pickup/getCode'];
     },
+    stateEditorMode() {
+      return this.$store.getters['preference/getMode'];
+    },
   },
   watch: {
     pickupCode(newValue, oldValue) {
@@ -29,11 +31,16 @@ export default {
         this.instance.setValue(newValue);
       }
     },
+    stateEditorMode(newValue, oldValue) {
+      if (newValue) {
+        this.instance.setOption('mode', newValue);
+      }
+    },
   },
   mounted() {
     const textArea = this.$refs.code_mirror;
     const instance = CodeMirror.fromTextArea(textArea, {
-      mode: 'javascript',
+      mode: 'text/javascript',
       theme: this.theme,
       readOnly: 'nocursor',
     });
