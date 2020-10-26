@@ -4,7 +4,6 @@
 
 <script>
 import * as CodeMirror from 'codemirror';
-import 'codemirror/mode/javascript/javascript';
 
 export default {
   props: {
@@ -21,6 +20,18 @@ export default {
     return {
       instance: null,
     };
+  },
+  computed: {
+    stateEditorMode() {
+      return this.$store.getters['preference/getMode'];
+    },
+  },
+  watch: {
+    stateEditorMode(newValue, oldValue) {
+      if (newValue) {
+        this.instance.setOption('mode', newValue);
+      }
+    },
   },
   mounted() {
     const textArea = this.$refs.code_mirror;
