@@ -1,45 +1,30 @@
 export const options = [
   {
-    value: 'hl',
+    value: 'text/html',
     text: 'HTML',
   },
   {
-    value: 'cs',
+    value: 'text/css',
     text: 'CSS',
   },
   {
-    value: 'js',
+    value: 'text/javascript',
     text: 'JavaScript',
   },
   {
-    value: 'py',
+    value: 'text/x-cython',
     text: 'Python',
   },
   {
-    value: 'c',
+    value: 'text/x-csrc',
     text: 'C',
   },
   {
-    value: 'jv',
+    value: 'text/x-java',
     text: 'Java',
   },
   {
-    value: 'sw',
+    value: 'text/x-swift',
     text: 'Swift',
   },
-  {
-    value: 'kt',
-    text: 'Kotlin',
-  },
 ];
-
-export const modeFiles = {
-  ht: '',
-  cs: '',
-  js: '',
-  py: '',
-  c: '',
-  jv: '',
-  sw: '',
-  kt: '',
-};
