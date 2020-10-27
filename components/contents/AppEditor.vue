@@ -43,6 +43,7 @@ export default {
     instance.setValue(this.codeValue);
     instance.on('cursorActivity', (doc) => {
       this.$store.commit('pickup/updateCode', doc.getSelection());
+      this.$store.commit('pickup/updatePosition', doc.listSelections()[0]);
     });
 
     this.instance = instance;
