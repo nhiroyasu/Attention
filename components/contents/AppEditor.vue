@@ -4,6 +4,7 @@
 
 <script>
 import * as CodeMirror from 'codemirror';
+import { firstScript } from '@/scripts/static/default';
 
 export default {
   props: {
@@ -13,7 +14,7 @@ export default {
     },
     codeValue: {
       type: String,
-      default: `const name = "attention app";\nconsole.log("Hello, " + name);\n`,
+      default: firstScript,
     },
   },
   data() {

@@ -10,7 +10,18 @@
       </div>
       <div class="content description-wrapper">
         <h3 class="text-light">Description</h3>
-        <p class="lead"></p>
+        <p class="description lead text-light">
+          You found it difficult to see the presenter's code because of the letters are too
+          small.<br />
+          Have you ever this kind of experience?<br />
+          <br />
+          <code>Attention</code> can solve it. Enlarged code letters are displayed by selecting code
+          lines of editor.<br />
+          <br />
+          Also, maybe you can try using this when share the screen on video communication tool.<br />
+          <br />
+          If you like, please see the github page of this app.
+        </p>
       </div>
       <div class="content github-btn">
         <b-button
@@ -41,6 +52,7 @@ export default {
 .sidebar {
   background-color: $sidebar-rgb;
   transition: width 0.4s ease-in-out;
+  overflow: hidden;
   width: 350px;
 
   @include md {
@@ -72,6 +84,12 @@ export default {
     }
 
     .code-type-wrapper {
+    }
+
+    .description-wrapper {
+      .description {
+        font-size: 1.1rem;
+      }
     }
 
     .github-link-btn {

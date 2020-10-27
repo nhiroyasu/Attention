@@ -4,7 +4,7 @@
       L : {{ $store.getters['pickup/getHeadLine'] }} -
       {{ $store.getters['pickup/getAnchorLine'] }}
     </div>
-    <view-editor />
+    <view-editor class="view-editor" />
   </div>
 </template>
 
@@ -27,7 +27,8 @@ export default {
 .pickup-point {
   background-color: $pickup-point-rgb;
   box-shadow: 0px -16px 20px rgba($pickup-point-rgb, 0.6);
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   position: absolute;
   padding: 10px 0px 0px 10px;
@@ -47,6 +48,10 @@ export default {
     font-family: 'Muli', sans-serif;
     font-size: 1.5rem;
     margin: 16px 0px;
+  }
+
+  .view-editor {
+    flex-grow: 1;
   }
 }
 </style>
