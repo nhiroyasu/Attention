@@ -1,5 +1,9 @@
 <template>
   <div class="pickup-point" :class="{ 'is-selected': isShowing }">
+    <div class="selected-line-number">
+      L : {{ $store.getters['pickup/getHeadLine'] }} -
+      {{ $store.getters['pickup/getAnchorLine'] }}
+    </div>
     <view-editor />
   </div>
 </template>
@@ -36,6 +40,13 @@ export default {
 
   &.is-selected {
     transform: translateX(0%);
+  }
+
+  .selected-line-number {
+    color: white;
+    font-family: 'Muli', sans-serif;
+    font-size: 1.5rem;
+    margin: 16px 0px;
   }
 }
 </style>
