@@ -1,0 +1,25 @@
+.cm-s-app {
+  &.CodeMirror {
+    font-family: 'Fica Mono', monospace;
+    background: $editor-rgb;
+  }
+
+  & .CodeMirror-gutters {
+    background: $editor-rgb;
+  }
+
+  & div.CodeMirror-selected {
+    background: $editor-select-rgb;
+  }
+
+  & .CodeMirror-line::selection,
+  & .CodeMirror-line > span::selection,
+  & .CodeMirror-line > span > span::selection {
+    background: $editor-select-rgba;
+  }
+  & .CodeMirror-line::-moz-selection,
+  & .CodeMirror-line > span::-moz-selection,
+  & .CodeMirror-line > span > span::-moz-selection {
+    background: $editor-select-rgba;
+  }
+}

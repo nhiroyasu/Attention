@@ -5,6 +5,9 @@
 </template>
 
 <style>
+@import 'codemirror/lib/codemirror.css';
+@import 'codemirror/theme/monokai.css';
+
 html {
   font-size: 16px;
   word-spacing: 1px;
